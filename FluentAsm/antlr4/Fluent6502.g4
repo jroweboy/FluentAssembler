@@ -8,15 +8,13 @@ module: line+ EOF;
 
 line : comment | instruction | directive | label_def;
 
-directive: DOT? preproc comment?;
-
 instruction: label_def? operation comment?;
 
 comment: COMMENT | MULTI_COMMENT;
 
 label_def : AT? SYMBOL COLON | op_goto;
 
-label: AT? SYMBOL | op_goto;
+// Expressions
 
 expr: number | pc | char | label | op_unary expr | expr op_binary expr | LPAREN expr RPAREN;
 
@@ -24,9 +22,19 @@ number : INT | HEX | BINARY;
 
 pc: STAR;
 char: CHAR;
+label: AT? SYMBOL | op_goto;
 
-// Directives and Preprocessor
-preproc: pifdef | pelse | pendif;
+// Directives (Preprocessor is handled before this)
+directive: dir_word;
+
+dir_word   : WORD expr (COMMA expr)* PEOL;
+// dir_align  : DALIGN expr;
+// dir_ascii  : DASCII STRING;
+// dir_assert : DASSERT expr (COMMA STRING)?;
+// dir_bank   : DBANK;
+// dir_bytes  : DBYTES expr (COMMA expr)*;
+// dir_bankbyt: DBANKBYTES expr (COMMA expr)*;
+
 pifdef: PIFDEF PTEXT+ PEOL;
 pelse:  PELSE  PEOL;
 pendif: PENDIF PEOL;
