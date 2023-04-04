@@ -26,5 +26,5 @@ internal record class Options
     public bool Output { get; set; }
 
     [Value(0, MetaName = "Input file(s)", HelpText = "Input file to be processed.", Required = true)]
-    public IEnumerable<string> Files { get; set; }
+    public IEnumerable<string> Files { get; set; } = new List<string>();
 }
