@@ -64,8 +64,6 @@ TXA: 'txa';
 TXS: 'txs';
 TYA: 'tya';
 
-
-DOT: '.';
 POUND: '#';
 COLON: ':';
 COMMA: ',';
@@ -86,43 +84,47 @@ LSHFT: '<<';
 RSHFT: '>>';
 AT: '@';
 
-mode DIRECTIVE;
-
 // Control directives
-ADDR  : '.addr';
-DW    : '.dw';
-WORD  : '.word';
+WORD: '.'? ('addr' | 'dw' | 'word');
+ALIGN : '.'? 'align';
+ASCII : '.'? 'ascii';
+ASSERT: '.'? 'assert';
+BANK  : '.'? 'bank';
+BANKBYTES: '.'? ('bankbytes' | 'dk');
+BYTES : '.'? ('byte' | 'byt' | 'db');
+CHARMAP: '.'? 'charmap';
+DBYTE : '.'? ('dbyt' | 'dbyte');
+DWORD : '.'? 'dword';
+HIBYTES: '.'? ('hibytes' | 'dh');
+LOBYTES: '.'? ('lobytes' | 'dh');
 
-// ALIGN : 'align' | '.align';
-// ASCII : 'ascii' | '.ascii';
-// ASSERT: 'assert' | '.assert';
-// BANK  : 'bank';
-// BANKBYTES: 'bankbytes' | 'dk';
-// BYTES : 'byte' | 'byt' | 'db';
-// CHARMAP: 'charmap';
-// DBYTE : 'dbyt' | 'dbyte';
-// DWORD : 'dword';
-// HIBYTES: 'hibytes' | 'dh';
+// This should maybe be in its own lexer?
+DEFINE: '.'? 'define' -> pushMode(DEFINETEXT);
+IF    : '.'? 'if';
+IFDEF : '.'? 'ifdef';
+ELIF  : '.'? ('elif' | 'elseif');
+ELSE  : '.'? 'else';
+ENDIF : '.'? 'endif';
+
+mode DEFINETEXT;
+
+DefSYMBOL options { caseInsensitive=false; }: [a-zA-Z_][a-zA-Z_0-9]*;
+DefLPAREN: '(';
+DefRPAREN: ')';
+DefCOMMA :  ',';
+DefTEXT  : .+? EOL;
+DefEOL   : EOL -> popMode;
+
+mode DIRECTIVE;
 
 // macro directives
 
-mode MACRO;
-
-PDEFINE: 'define';
-PIF    : 'if';
-PIFDEF : 'ifdef';
-PELIF  : 'elif' | 'elseif';
-PELSE  : 'else';
-PENDIF : 'endif';
-
 // Helpers for directives and macros
-// PDEFTEX: ()+;
-PTEXT  : [a-z0-9_-]+;
-PEOLPOP: EOL -> popMode;
-PEOL   : EOL -> popMode;
-PWS    : WS+ -> channel(HIDDEN);
+DirTEXT  : [a-z0-9_-]+;
+DirEOL   : EOL -> popMode;
+DirWS    : WS+ -> channel(HIDDEN);
 
-mode default;
+mode DEFAULT_MODE;
 
 STRING: '"' ~["]* '"';
 

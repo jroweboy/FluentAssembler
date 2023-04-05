@@ -1,6 +1,8 @@
 ## Other
 
 .antlr
+*.interp
+*.tokens
 
 ## VISUAL STUDIO GITIGNORE
 

@@ -25,19 +25,23 @@ char: CHAR;
 label: AT? SYMBOL | op_goto;
 
 // Directives (Preprocessor is handled before this)
-directive: dir_word;
+directive: 
+    dir_word
+    | dir_align
+    | dir_ascii
+    | dir_assert
+    | dir_bank
+    | dir_bytes
+    | dir_bankbyt
+;
 
-dir_word   : WORD expr (COMMA expr)* PEOL;
-// dir_align  : DALIGN expr;
-// dir_ascii  : DASCII STRING;
-// dir_assert : DASSERT expr (COMMA STRING)?;
-// dir_bank   : DBANK;
-// dir_bytes  : DBYTES expr (COMMA expr)*;
-// dir_bankbyt: DBANKBYTES expr (COMMA expr)*;
-
-pifdef: PIFDEF PTEXT+ PEOL;
-pelse:  PELSE  PEOL;
-pendif: PENDIF PEOL;
+dir_word   : WORD expr (COMMA expr)*;
+dir_align  : ALIGN expr;
+dir_ascii  : ASCII STRING;
+dir_assert : ASSERT expr (COMMA STRING)?;
+dir_bank   : BANK;
+dir_bytes  : BYTES expr (COMMA expr)*;
+dir_bankbyt: BANKBYTES expr (COMMA expr)*;
 
 // Math Operators
 
