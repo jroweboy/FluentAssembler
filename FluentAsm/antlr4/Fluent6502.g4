@@ -1,7 +1,12 @@
 parser grammar Fluent6502;
 
+@header {
+namespace FluentAsm.Assembly.ASM_6502.gen;
+}
+
 options {
     tokenVocab = FluentLexer;
+    language=CSharp;
 }
 
 module: line+ EOF;

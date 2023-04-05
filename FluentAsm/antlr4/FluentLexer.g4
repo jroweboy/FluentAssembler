@@ -1,7 +1,14 @@
 
 lexer grammar FluentLexer;
 
-options { caseInsensitive=true; }
+@header {
+namespace FluentAsm.Assembly.ASM_6502.gen;
+}
+
+options {
+    caseInsensitive=true;
+    language=CSharp;
+}
 
 A: 'a';
 X: 'x';

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from Fluent6502.g4 by ANTLR 4.12.0
+// Generated from FluentAsm/antlr4/Fluent6502.g4 by ANTLR 4.12.0
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -18,6 +18,9 @@
 #pragma warning disable 1591
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
+
+
+namespace FluentAsm.Assembly.ASM_6502.gen;
 
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;

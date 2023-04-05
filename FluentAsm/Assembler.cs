@@ -1,4 +1,6 @@
-﻿namespace FluentAsm.Assembly._6502;
+﻿[assembly: CLSCompliant(true)]
+
+namespace FluentAsm.Assembly.ASM_6502;
 
 public class Assembler
 {
