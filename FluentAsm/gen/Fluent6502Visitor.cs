@@ -101,65 +101,65 @@ public interface IFluent6502Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitDirective([NotNull] Fluent6502.DirectiveContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_word"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirWord"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDir_word([NotNull] Fluent6502.Dir_wordContext context);
+	Result VisitDirWord([NotNull] Fluent6502.DirWordContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_align"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirAlign"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDir_align([NotNull] Fluent6502.Dir_alignContext context);
+	Result VisitDirAlign([NotNull] Fluent6502.DirAlignContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_ascii"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirAscii"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDir_ascii([NotNull] Fluent6502.Dir_asciiContext context);
+	Result VisitDirAscii([NotNull] Fluent6502.DirAsciiContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_assert"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirAssert"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDir_assert([NotNull] Fluent6502.Dir_assertContext context);
+	Result VisitDirAssert([NotNull] Fluent6502.DirAssertContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_bank"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirBank"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDir_bank([NotNull] Fluent6502.Dir_bankContext context);
+	Result VisitDirBank([NotNull] Fluent6502.DirBankContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_bytes"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirBytes"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDir_bytes([NotNull] Fluent6502.Dir_bytesContext context);
+	Result VisitDirBytes([NotNull] Fluent6502.DirBytesContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_bankbyt"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirBankbyte"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDir_bankbyt([NotNull] Fluent6502.Dir_bankbytContext context);
+	Result VisitDirBankbyte([NotNull] Fluent6502.DirBankbyteContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_unary"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opUnary"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_unary([NotNull] Fluent6502.Op_unaryContext context);
+	Result VisitOpUnary([NotNull] Fluent6502.OpUnaryContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_binary"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opBinary"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_binary([NotNull] Fluent6502.Op_binaryContext context);
+	Result VisitOpBinary([NotNull] Fluent6502.OpBinaryContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_goto"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opGoto"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_goto([NotNull] Fluent6502.Op_gotoContext context);
+	Result VisitOpGoto([NotNull] Fluent6502.OpGotoContext context);
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Fluent6502.operation"/>.
 	/// </summary>
@@ -167,123 +167,123 @@ public interface IFluent6502Visitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitOperation([NotNull] Fluent6502.OperationContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_imp"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opImp"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_imp([NotNull] Fluent6502.Op_impContext context);
+	Result VisitOpImp([NotNull] Fluent6502.OpImpContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_acc"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opAcc"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_acc([NotNull] Fluent6502.Op_accContext context);
+	Result VisitOpAcc([NotNull] Fluent6502.OpAccContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_imm"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opImm"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_imm([NotNull] Fluent6502.Op_immContext context);
+	Result VisitOpImm([NotNull] Fluent6502.OpImmContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_rel"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opRel"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_rel([NotNull] Fluent6502.Op_relContext context);
+	Result VisitOpRel([NotNull] Fluent6502.OpRelContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_zab"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opZab"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_zab([NotNull] Fluent6502.Op_zabContext context);
+	Result VisitOpZab([NotNull] Fluent6502.OpZabContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_zax"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opZax"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_zax([NotNull] Fluent6502.Op_zaxContext context);
+	Result VisitOpZax([NotNull] Fluent6502.OpZaxContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_zay"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opZay"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_zay([NotNull] Fluent6502.Op_zayContext context);
+	Result VisitOpZay([NotNull] Fluent6502.OpZayContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_ind"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opInd"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_ind([NotNull] Fluent6502.Op_indContext context);
+	Result VisitOpInd([NotNull] Fluent6502.OpIndContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_inx"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opInx"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_inx([NotNull] Fluent6502.Op_inxContext context);
+	Result VisitOpInx([NotNull] Fluent6502.OpInxContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_iny"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opIny"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOp_iny([NotNull] Fluent6502.Op_inyContext context);
+	Result VisitOpIny([NotNull] Fluent6502.OpInyContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_implied"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeImplied"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_implied([NotNull] Fluent6502.Opcode_impliedContext context);
+	Result VisitOpcodeImplied([NotNull] Fluent6502.OpcodeImpliedContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_accumlator"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeAccumlator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_accumlator([NotNull] Fluent6502.Opcode_accumlatorContext context);
+	Result VisitOpcodeAccumlator([NotNull] Fluent6502.OpcodeAccumlatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_immediate"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeImmediate"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_immediate([NotNull] Fluent6502.Opcode_immediateContext context);
+	Result VisitOpcodeImmediate([NotNull] Fluent6502.OpcodeImmediateContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_relative"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeRelative"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_relative([NotNull] Fluent6502.Opcode_relativeContext context);
+	Result VisitOpcodeRelative([NotNull] Fluent6502.OpcodeRelativeContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_zp_abs"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeZpAbs"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_zp_abs([NotNull] Fluent6502.Opcode_zp_absContext context);
+	Result VisitOpcodeZpAbs([NotNull] Fluent6502.OpcodeZpAbsContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_zp_abs_x"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeZpAbsX"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_zp_abs_x([NotNull] Fluent6502.Opcode_zp_abs_xContext context);
+	Result VisitOpcodeZpAbsX([NotNull] Fluent6502.OpcodeZpAbsXContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_zp_abs_y"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeZpAbsY"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_zp_abs_y([NotNull] Fluent6502.Opcode_zp_abs_yContext context);
+	Result VisitOpcodeZpAbsY([NotNull] Fluent6502.OpcodeZpAbsYContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_indirect"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeIndirect"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_indirect([NotNull] Fluent6502.Opcode_indirectContext context);
+	Result VisitOpcodeIndirect([NotNull] Fluent6502.OpcodeIndirectContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_indirect_x"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeIndirectX"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_indirect_x([NotNull] Fluent6502.Opcode_indirect_xContext context);
+	Result VisitOpcodeIndirectX([NotNull] Fluent6502.OpcodeIndirectXContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_indirect_y"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeIndirectY"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitOpcode_indirect_y([NotNull] Fluent6502.Opcode_indirect_yContext context);
+	Result VisitOpcodeIndirectY([NotNull] Fluent6502.OpcodeIndirectYContext context);
 }

@@ -148,7 +148,7 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// <return>The visitor result.</return>
 	public virtual Result VisitDirective([NotNull] Fluent6502.DirectiveContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_word"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirWord"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -156,9 +156,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDir_word([NotNull] Fluent6502.Dir_wordContext context) { return VisitChildren(context); }
+	public virtual Result VisitDirWord([NotNull] Fluent6502.DirWordContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_align"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirAlign"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -166,9 +166,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDir_align([NotNull] Fluent6502.Dir_alignContext context) { return VisitChildren(context); }
+	public virtual Result VisitDirAlign([NotNull] Fluent6502.DirAlignContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_ascii"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirAscii"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -176,9 +176,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDir_ascii([NotNull] Fluent6502.Dir_asciiContext context) { return VisitChildren(context); }
+	public virtual Result VisitDirAscii([NotNull] Fluent6502.DirAsciiContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_assert"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirAssert"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -186,9 +186,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDir_assert([NotNull] Fluent6502.Dir_assertContext context) { return VisitChildren(context); }
+	public virtual Result VisitDirAssert([NotNull] Fluent6502.DirAssertContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_bank"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirBank"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -196,9 +196,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDir_bank([NotNull] Fluent6502.Dir_bankContext context) { return VisitChildren(context); }
+	public virtual Result VisitDirBank([NotNull] Fluent6502.DirBankContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_bytes"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirBytes"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -206,9 +206,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDir_bytes([NotNull] Fluent6502.Dir_bytesContext context) { return VisitChildren(context); }
+	public virtual Result VisitDirBytes([NotNull] Fluent6502.DirBytesContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.dir_bankbyt"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.dirBankbyte"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -216,9 +216,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDir_bankbyt([NotNull] Fluent6502.Dir_bankbytContext context) { return VisitChildren(context); }
+	public virtual Result VisitDirBankbyte([NotNull] Fluent6502.DirBankbyteContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_unary"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opUnary"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -226,9 +226,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_unary([NotNull] Fluent6502.Op_unaryContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpUnary([NotNull] Fluent6502.OpUnaryContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_binary"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opBinary"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -236,9 +236,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_binary([NotNull] Fluent6502.Op_binaryContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpBinary([NotNull] Fluent6502.OpBinaryContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_goto"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opGoto"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -246,7 +246,7 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_goto([NotNull] Fluent6502.Op_gotoContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpGoto([NotNull] Fluent6502.OpGotoContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by <see cref="Fluent6502.operation"/>.
 	/// <para>
@@ -258,7 +258,7 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// <return>The visitor result.</return>
 	public virtual Result VisitOperation([NotNull] Fluent6502.OperationContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_imp"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opImp"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -266,9 +266,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_imp([NotNull] Fluent6502.Op_impContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpImp([NotNull] Fluent6502.OpImpContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_acc"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opAcc"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -276,9 +276,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_acc([NotNull] Fluent6502.Op_accContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpAcc([NotNull] Fluent6502.OpAccContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_imm"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opImm"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -286,9 +286,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_imm([NotNull] Fluent6502.Op_immContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpImm([NotNull] Fluent6502.OpImmContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_rel"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opRel"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -296,9 +296,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_rel([NotNull] Fluent6502.Op_relContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpRel([NotNull] Fluent6502.OpRelContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_zab"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opZab"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -306,9 +306,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_zab([NotNull] Fluent6502.Op_zabContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpZab([NotNull] Fluent6502.OpZabContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_zax"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opZax"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -316,9 +316,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_zax([NotNull] Fluent6502.Op_zaxContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpZax([NotNull] Fluent6502.OpZaxContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_zay"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opZay"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -326,9 +326,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_zay([NotNull] Fluent6502.Op_zayContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpZay([NotNull] Fluent6502.OpZayContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_ind"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opInd"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -336,9 +336,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_ind([NotNull] Fluent6502.Op_indContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpInd([NotNull] Fluent6502.OpIndContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_inx"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opInx"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -346,9 +346,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_inx([NotNull] Fluent6502.Op_inxContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpInx([NotNull] Fluent6502.OpInxContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.op_iny"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opIny"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -356,9 +356,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOp_iny([NotNull] Fluent6502.Op_inyContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpIny([NotNull] Fluent6502.OpInyContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_implied"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeImplied"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -366,9 +366,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_implied([NotNull] Fluent6502.Opcode_impliedContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeImplied([NotNull] Fluent6502.OpcodeImpliedContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_accumlator"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeAccumlator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -376,9 +376,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_accumlator([NotNull] Fluent6502.Opcode_accumlatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeAccumlator([NotNull] Fluent6502.OpcodeAccumlatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_immediate"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeImmediate"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -386,9 +386,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_immediate([NotNull] Fluent6502.Opcode_immediateContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeImmediate([NotNull] Fluent6502.OpcodeImmediateContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_relative"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeRelative"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -396,9 +396,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_relative([NotNull] Fluent6502.Opcode_relativeContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeRelative([NotNull] Fluent6502.OpcodeRelativeContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_zp_abs"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeZpAbs"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -406,9 +406,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_zp_abs([NotNull] Fluent6502.Opcode_zp_absContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeZpAbs([NotNull] Fluent6502.OpcodeZpAbsContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_zp_abs_x"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeZpAbsX"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -416,9 +416,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_zp_abs_x([NotNull] Fluent6502.Opcode_zp_abs_xContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeZpAbsX([NotNull] Fluent6502.OpcodeZpAbsXContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_zp_abs_y"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeZpAbsY"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -426,9 +426,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_zp_abs_y([NotNull] Fluent6502.Opcode_zp_abs_yContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeZpAbsY([NotNull] Fluent6502.OpcodeZpAbsYContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_indirect"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeIndirect"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -436,9 +436,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_indirect([NotNull] Fluent6502.Opcode_indirectContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeIndirect([NotNull] Fluent6502.OpcodeIndirectContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_indirect_x"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeIndirectX"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -446,9 +446,9 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_indirect_x([NotNull] Fluent6502.Opcode_indirect_xContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeIndirectX([NotNull] Fluent6502.OpcodeIndirectXContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="Fluent6502.opcode_indirect_y"/>.
+	/// Visit a parse tree produced by <see cref="Fluent6502.opcodeIndirectY"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -456,5 +456,5 @@ public partial class Fluent6502BaseVisitor<Result> : AbstractParseTreeVisitor<Re
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitOpcode_indirect_y([NotNull] Fluent6502.Opcode_indirect_yContext context) { return VisitChildren(context); }
+	public virtual Result VisitOpcodeIndirectY([NotNull] Fluent6502.OpcodeIndirectYContext context) { return VisitChildren(context); }
 }

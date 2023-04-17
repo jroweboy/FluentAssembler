@@ -17,68 +17,68 @@ instruction: label_def? operation comment?;
 
 comment: COMMENT | MULTI_COMMENT;
 
-label_def : AT? SYMBOL COLON | op_goto;
+label_def : AT? SYMBOL COLON | opGoto;
 
 // Expressions
 
-expr: number | pc | char | label | op_unary expr | expr op_binary expr | LPAREN expr RPAREN;
+expr: number | pc | char | label | opUnary expr | expr opBinary expr | LPAREN expr RPAREN;
 
 number : INT | HEX | BINARY;
 
 pc: STAR;
 char: CHAR;
-label: AT? SYMBOL | op_goto;
+label: AT? SYMBOL | opGoto;
 
 // Directives (Preprocessor is handled before this)
 directive: 
-    dir_word
-    | dir_align
-    | dir_ascii
-    | dir_assert
-    | dir_bank
-    | dir_bytes
-    | dir_bankbyt
+    dirWord
+    | dirAlign
+    | dirAscii
+    | dirAssert
+    | dirBank
+    | dirBytes
+    | dirBankbyte
 ;
 
-dir_word   : WORD expr (COMMA expr)*;
-dir_align  : ALIGN expr;
-dir_ascii  : ASCII STRING;
-dir_assert : ASSERT expr (COMMA STRING)?;
-dir_bank   : BANK;
-dir_bytes  : BYTES expr (COMMA expr)*;
-dir_bankbyt: BANKBYTES expr (COMMA expr)*;
+dirWord    : WORD expr (COMMA expr)*;
+dirAlign   : ALIGN expr;
+dirAscii   : ASCII STRING;
+dirAssert  : ASSERT expr (COMMA STRING)?;
+dirBank    : BANK;
+dirBytes   : BYTES expr (COMMA expr)*;
+dirBankbyte: BANKBYTES expr (COMMA expr)*;
 
 // Math Operators
 
-op_unary: PLUS | MINUS | LT | GT | CARET | TILDE | EXCLM;
-op_binary: PLUS | MINUS | STAR | SLASH | AMP | PIPE | LSHFT | RSHFT;
-op_goto: PLUS+ | MINUS+;
+opUnary: PLUS | MINUS | LT | GT | CARET | TILDE | EXCLM;
+opBinary: PLUS | MINUS | STAR | SLASH | AMP | PIPE | LSHFT | RSHFT;
+opGoto: PLUS+ | MINUS+;
 
 // Operation
 
-operation: op_imp | op_acc | op_imm | op_rel | op_zab | op_zax | op_zay | op_ind | op_inx | op_iny;
+operation: opImp | opAcc | opImm | opRel | opZab | opZax | opZay | opInd | opInx | opIny;
 
-op_imp : opcode_implied;
-op_acc : opcode_accumlator A?;
-op_imm : opcode_immediate  POUND expr;
-op_rel : opcode_relative   expr;
-op_zab : opcode_zp_abs     expr;
-op_zax : opcode_zp_abs_x   expr COMMA X;
-op_zay : opcode_zp_abs_y   expr COMMA Y;
-op_ind : opcode_indirect   LPAREN expr RPAREN;
-op_inx : opcode_indirect_x LPAREN expr COMMA X RPAREN;
-op_iny : opcode_indirect_y LPAREN expr RPAREN COMMA Y;
+opImp : opcodeImplied;
+opAcc : opcodeAccumlator A?;
+opImm : opcodeImmediate  POUND expr;
+opRel : opcodeRelative   expr;
+opZab : opcodeZpAbs      expr;
+opZax : opcodeZpAbsX     expr COMMA X;
+opZay : opcodeZpAbsY     expr COMMA Y;
+opInd : opcodeIndirect   LPAREN expr RPAREN;
+opInx : opcodeIndirectX  LPAREN expr COMMA X RPAREN;
+opIny : opcodeIndirectY  LPAREN expr RPAREN COMMA Y;
 
 
-opcode_implied    : BRK | CLC | CLD | CLI | CLV | DEX | DEY | INX | INY | NOP | PHA | PHP | PLA | PLP | RTI | RTS | SEC | SED | SEI | TAX | TAY | TSX | TXA | TXS | TYA;
-opcode_accumlator : ASL | LSR | ROL | ROR;
-opcode_immediate  : ADC | AND | CMP | CPX | CPY | EOR | LDA | LDX | LDY | ORA | SBC;
-opcode_relative   : BCC | BCS | BEQ | BMI | BNE | BPL | BVC | BVS;
+opcodeImplied   : BRK | CLC | CLD | CLI | CLV | DEX | DEY | INX | INY | NOP | PHA | PHP | PLA | PLP | RTI | RTS | SEC | SED | SEI | TAX | TAY | TSX | TXA | TXS | TYA;
+opcodeAccumlator: ASL | LSR | ROL | ROR;
+opcodeImmediate : ADC | AND | CMP | CPX | CPY | EOR | LDA | LDX | LDY | ORA | SBC;
+opcodeRelative  : BCC | BCS | BEQ | BMI | BNE | BPL | BVC | BVS;
 
-opcode_zp_abs     : ADC | AND | ASL | BIT | CMP | CPX | CPY | DEC | EOR | INC | JMP | JSR | LDA | LDX | LDY | LSR | ORA | ROL | ROR | SBC | STA | STX | STY;
-opcode_zp_abs_x   : ADC | AND | ASL | CMP | DEC | EOR | INC | LDA | LDY | LSR | ORA | ROL | ROR | SBC | STA | STY;
-opcode_zp_abs_y   : ADC | AND | CMP | EOR | LDA | LDX | ORA | SBC | STA | STX;
+opcodeZpAbs     : ADC | AND | ASL | BIT | CMP | CPX | CPY | DEC | EOR | INC | JMP | JSR | LDA | LDX | LDY | LSR | ORA | ROL | ROR | SBC | STA | STX | STY;
+opcodeZpAbsX    : ADC | AND | ASL | CMP | DEC | EOR | INC | LDA | LDY | LSR | ORA | ROL | ROR | SBC | STA | STY;
+opcodeZpAbsY    : ADC | AND | CMP | EOR | LDA | LDX | ORA | SBC | STA | STX;
 
-opcode_indirect   : JMP;
-opcode_indirect_x : ADC | AND | CMP | EOR | LDA | ORA | SBC | STA;
-opcode_indirect_y : ADC | AND | CMP | EOR | LDA | ORA | SBC | STA;
+opcodeIndirect  : JMP;
+opcodeIndirectX : ADC | AND | CMP | EOR | LDA | ORA | SBC | STA;
+opcodeIndirectY : ADC | AND | CMP | EOR | LDA | ORA | SBC | STA;

@@ -57,23 +57,23 @@ public partial class Fluent6502 : Parser {
 	public const int
 		RULE_module = 0, RULE_line = 1, RULE_instruction = 2, RULE_comment = 3, 
 		RULE_label_def = 4, RULE_expr = 5, RULE_number = 6, RULE_pc = 7, RULE_char = 8, 
-		RULE_label = 9, RULE_directive = 10, RULE_dir_word = 11, RULE_dir_align = 12, 
-		RULE_dir_ascii = 13, RULE_dir_assert = 14, RULE_dir_bank = 15, RULE_dir_bytes = 16, 
-		RULE_dir_bankbyt = 17, RULE_op_unary = 18, RULE_op_binary = 19, RULE_op_goto = 20, 
-		RULE_operation = 21, RULE_op_imp = 22, RULE_op_acc = 23, RULE_op_imm = 24, 
-		RULE_op_rel = 25, RULE_op_zab = 26, RULE_op_zax = 27, RULE_op_zay = 28, 
-		RULE_op_ind = 29, RULE_op_inx = 30, RULE_op_iny = 31, RULE_opcode_implied = 32, 
-		RULE_opcode_accumlator = 33, RULE_opcode_immediate = 34, RULE_opcode_relative = 35, 
-		RULE_opcode_zp_abs = 36, RULE_opcode_zp_abs_x = 37, RULE_opcode_zp_abs_y = 38, 
-		RULE_opcode_indirect = 39, RULE_opcode_indirect_x = 40, RULE_opcode_indirect_y = 41;
+		RULE_label = 9, RULE_directive = 10, RULE_dirWord = 11, RULE_dirAlign = 12, 
+		RULE_dirAscii = 13, RULE_dirAssert = 14, RULE_dirBank = 15, RULE_dirBytes = 16, 
+		RULE_dirBankbyte = 17, RULE_opUnary = 18, RULE_opBinary = 19, RULE_opGoto = 20, 
+		RULE_operation = 21, RULE_opImp = 22, RULE_opAcc = 23, RULE_opImm = 24, 
+		RULE_opRel = 25, RULE_opZab = 26, RULE_opZax = 27, RULE_opZay = 28, RULE_opInd = 29, 
+		RULE_opInx = 30, RULE_opIny = 31, RULE_opcodeImplied = 32, RULE_opcodeAccumlator = 33, 
+		RULE_opcodeImmediate = 34, RULE_opcodeRelative = 35, RULE_opcodeZpAbs = 36, 
+		RULE_opcodeZpAbsX = 37, RULE_opcodeZpAbsY = 38, RULE_opcodeIndirect = 39, 
+		RULE_opcodeIndirectX = 40, RULE_opcodeIndirectY = 41;
 	public static readonly string[] ruleNames = {
 		"module", "line", "instruction", "comment", "label_def", "expr", "number", 
-		"pc", "char", "label", "directive", "dir_word", "dir_align", "dir_ascii", 
-		"dir_assert", "dir_bank", "dir_bytes", "dir_bankbyt", "op_unary", "op_binary", 
-		"op_goto", "operation", "op_imp", "op_acc", "op_imm", "op_rel", "op_zab", 
-		"op_zax", "op_zay", "op_ind", "op_inx", "op_iny", "opcode_implied", "opcode_accumlator", 
-		"opcode_immediate", "opcode_relative", "opcode_zp_abs", "opcode_zp_abs_x", 
-		"opcode_zp_abs_y", "opcode_indirect", "opcode_indirect_x", "opcode_indirect_y"
+		"pc", "char", "label", "directive", "dirWord", "dirAlign", "dirAscii", 
+		"dirAssert", "dirBank", "dirBytes", "dirBankbyte", "opUnary", "opBinary", 
+		"opGoto", "operation", "opImp", "opAcc", "opImm", "opRel", "opZab", "opZax", 
+		"opZay", "opInd", "opInx", "opIny", "opcodeImplied", "opcodeAccumlator", 
+		"opcodeImmediate", "opcodeRelative", "opcodeZpAbs", "opcodeZpAbsX", "opcodeZpAbsY", 
+		"opcodeIndirect", "opcodeIndirectX", "opcodeIndirectY"
 	};
 
 	private static readonly string[] _LiteralNames = {
@@ -385,8 +385,8 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SYMBOL() { return GetToken(Fluent6502.SYMBOL, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COLON() { return GetToken(Fluent6502.COLON, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AT() { return GetToken(Fluent6502.AT, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public Op_gotoContext op_goto() {
-			return GetRuleContext<Op_gotoContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpGotoContext opGoto() {
+			return GetRuleContext<OpGotoContext>(0);
 		}
 		public Label_defContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -435,7 +435,7 @@ public partial class Fluent6502 : Parser {
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 111;
-				op_goto();
+				opGoto();
 				}
 				break;
 			default:
@@ -466,8 +466,8 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public LabelContext label() {
 			return GetRuleContext<LabelContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_unaryContext op_unary() {
-			return GetRuleContext<Op_unaryContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpUnaryContext opUnary() {
+			return GetRuleContext<OpUnaryContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext[] expr() {
 			return GetRuleContexts<ExprContext>();
@@ -477,8 +477,8 @@ public partial class Fluent6502 : Parser {
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LPAREN() { return GetToken(Fluent6502.LPAREN, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RPAREN() { return GetToken(Fluent6502.RPAREN, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public Op_binaryContext op_binary() {
-			return GetRuleContext<Op_binaryContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpBinaryContext opBinary() {
+			return GetRuleContext<OpBinaryContext>(0);
 		}
 		public ExprContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -539,7 +539,7 @@ public partial class Fluent6502 : Parser {
 			case 5:
 				{
 				State = 119;
-				op_unary();
+				opUnary();
 				State = 120;
 				expr(3);
 				}
@@ -571,7 +571,7 @@ public partial class Fluent6502 : Parser {
 					State = 128;
 					if (!(Precpred(Context, 2))) throw new FailedPredicateException(this, "Precpred(Context, 2)");
 					State = 129;
-					op_binary();
+					opBinary();
 					State = 130;
 					expr(3);
 					}
@@ -718,8 +718,8 @@ public partial class Fluent6502 : Parser {
 	public partial class LabelContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SYMBOL() { return GetToken(Fluent6502.SYMBOL, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AT() { return GetToken(Fluent6502.AT, 0); }
-		[System.Diagnostics.DebuggerNonUserCode] public Op_gotoContext op_goto() {
-			return GetRuleContext<Op_gotoContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpGotoContext opGoto() {
+			return GetRuleContext<OpGotoContext>(0);
 		}
 		public LabelContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -766,7 +766,7 @@ public partial class Fluent6502 : Parser {
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 147;
-				op_goto();
+				opGoto();
 				}
 				break;
 			default:
@@ -785,26 +785,26 @@ public partial class Fluent6502 : Parser {
 	}
 
 	public partial class DirectiveContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Dir_wordContext dir_word() {
-			return GetRuleContext<Dir_wordContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public DirWordContext dirWord() {
+			return GetRuleContext<DirWordContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Dir_alignContext dir_align() {
-			return GetRuleContext<Dir_alignContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public DirAlignContext dirAlign() {
+			return GetRuleContext<DirAlignContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Dir_asciiContext dir_ascii() {
-			return GetRuleContext<Dir_asciiContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public DirAsciiContext dirAscii() {
+			return GetRuleContext<DirAsciiContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Dir_assertContext dir_assert() {
-			return GetRuleContext<Dir_assertContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public DirAssertContext dirAssert() {
+			return GetRuleContext<DirAssertContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Dir_bankContext dir_bank() {
-			return GetRuleContext<Dir_bankContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public DirBankContext dirBank() {
+			return GetRuleContext<DirBankContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Dir_bytesContext dir_bytes() {
-			return GetRuleContext<Dir_bytesContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public DirBytesContext dirBytes() {
+			return GetRuleContext<DirBytesContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Dir_bankbytContext dir_bankbyt() {
-			return GetRuleContext<Dir_bankbytContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public DirBankbyteContext dirBankbyte() {
+			return GetRuleContext<DirBankbyteContext>(0);
 		}
 		public DirectiveContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -831,49 +831,49 @@ public partial class Fluent6502 : Parser {
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 150;
-				dir_word();
+				dirWord();
 				}
 				break;
 			case ALIGN:
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 151;
-				dir_align();
+				dirAlign();
 				}
 				break;
 			case ASCII:
 				EnterOuterAlt(_localctx, 3);
 				{
 				State = 152;
-				dir_ascii();
+				dirAscii();
 				}
 				break;
 			case ASSERT:
 				EnterOuterAlt(_localctx, 4);
 				{
 				State = 153;
-				dir_assert();
+				dirAssert();
 				}
 				break;
 			case BANK:
 				EnterOuterAlt(_localctx, 5);
 				{
 				State = 154;
-				dir_bank();
+				dirBank();
 				}
 				break;
 			case BYTES:
 				EnterOuterAlt(_localctx, 6);
 				{
 				State = 155;
-				dir_bytes();
+				dirBytes();
 				}
 				break;
 			case BANKBYTES:
 				EnterOuterAlt(_localctx, 7);
 				{
 				State = 156;
-				dir_bankbyt();
+				dirBankbyte();
 				}
 				break;
 			default:
@@ -891,7 +891,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Dir_wordContext : ParserRuleContext {
+	public partial class DirWordContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode WORD() { return GetToken(Fluent6502.WORD, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext[] expr() {
 			return GetRuleContexts<ExprContext>();
@@ -903,23 +903,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA(int i) {
 			return GetToken(Fluent6502.COMMA, i);
 		}
-		public Dir_wordContext(ParserRuleContext parent, int invokingState)
+		public DirWordContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_dir_word; } }
+		public override int RuleIndex { get { return RULE_dirWord; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDir_word(this);
+			if (typedVisitor != null) return typedVisitor.VisitDirWord(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Dir_wordContext dir_word() {
-		Dir_wordContext _localctx = new Dir_wordContext(Context, State);
-		EnterRule(_localctx, 22, RULE_dir_word);
+	public DirWordContext dirWord() {
+		DirWordContext _localctx = new DirWordContext(Context, State);
+		EnterRule(_localctx, 22, RULE_dirWord);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -957,28 +957,28 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Dir_alignContext : ParserRuleContext {
+	public partial class DirAlignContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ALIGN() { return GetToken(Fluent6502.ALIGN, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
-		public Dir_alignContext(ParserRuleContext parent, int invokingState)
+		public DirAlignContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_dir_align; } }
+		public override int RuleIndex { get { return RULE_dirAlign; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDir_align(this);
+			if (typedVisitor != null) return typedVisitor.VisitDirAlign(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Dir_alignContext dir_align() {
-		Dir_alignContext _localctx = new Dir_alignContext(Context, State);
-		EnterRule(_localctx, 24, RULE_dir_align);
+	public DirAlignContext dirAlign() {
+		DirAlignContext _localctx = new DirAlignContext(Context, State);
+		EnterRule(_localctx, 24, RULE_dirAlign);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -999,26 +999,26 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Dir_asciiContext : ParserRuleContext {
+	public partial class DirAsciiContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ASCII() { return GetToken(Fluent6502.ASCII, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING() { return GetToken(Fluent6502.STRING, 0); }
-		public Dir_asciiContext(ParserRuleContext parent, int invokingState)
+		public DirAsciiContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_dir_ascii; } }
+		public override int RuleIndex { get { return RULE_dirAscii; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDir_ascii(this);
+			if (typedVisitor != null) return typedVisitor.VisitDirAscii(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Dir_asciiContext dir_ascii() {
-		Dir_asciiContext _localctx = new Dir_asciiContext(Context, State);
-		EnterRule(_localctx, 26, RULE_dir_ascii);
+	public DirAsciiContext dirAscii() {
+		DirAsciiContext _localctx = new DirAsciiContext(Context, State);
+		EnterRule(_localctx, 26, RULE_dirAscii);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -1039,30 +1039,30 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Dir_assertContext : ParserRuleContext {
+	public partial class DirAssertContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ASSERT() { return GetToken(Fluent6502.ASSERT, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA() { return GetToken(Fluent6502.COMMA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING() { return GetToken(Fluent6502.STRING, 0); }
-		public Dir_assertContext(ParserRuleContext parent, int invokingState)
+		public DirAssertContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_dir_assert; } }
+		public override int RuleIndex { get { return RULE_dirAssert; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDir_assert(this);
+			if (typedVisitor != null) return typedVisitor.VisitDirAssert(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Dir_assertContext dir_assert() {
-		Dir_assertContext _localctx = new Dir_assertContext(Context, State);
-		EnterRule(_localctx, 28, RULE_dir_assert);
+	public DirAssertContext dirAssert() {
+		DirAssertContext _localctx = new DirAssertContext(Context, State);
+		EnterRule(_localctx, 28, RULE_dirAssert);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1096,25 +1096,25 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Dir_bankContext : ParserRuleContext {
+	public partial class DirBankContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BANK() { return GetToken(Fluent6502.BANK, 0); }
-		public Dir_bankContext(ParserRuleContext parent, int invokingState)
+		public DirBankContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_dir_bank; } }
+		public override int RuleIndex { get { return RULE_dirBank; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDir_bank(this);
+			if (typedVisitor != null) return typedVisitor.VisitDirBank(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Dir_bankContext dir_bank() {
-		Dir_bankContext _localctx = new Dir_bankContext(Context, State);
-		EnterRule(_localctx, 30, RULE_dir_bank);
+	public DirBankContext dirBank() {
+		DirBankContext _localctx = new DirBankContext(Context, State);
+		EnterRule(_localctx, 30, RULE_dirBank);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -1133,7 +1133,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Dir_bytesContext : ParserRuleContext {
+	public partial class DirBytesContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BYTES() { return GetToken(Fluent6502.BYTES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext[] expr() {
 			return GetRuleContexts<ExprContext>();
@@ -1145,23 +1145,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA(int i) {
 			return GetToken(Fluent6502.COMMA, i);
 		}
-		public Dir_bytesContext(ParserRuleContext parent, int invokingState)
+		public DirBytesContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_dir_bytes; } }
+		public override int RuleIndex { get { return RULE_dirBytes; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDir_bytes(this);
+			if (typedVisitor != null) return typedVisitor.VisitDirBytes(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Dir_bytesContext dir_bytes() {
-		Dir_bytesContext _localctx = new Dir_bytesContext(Context, State);
-		EnterRule(_localctx, 32, RULE_dir_bytes);
+	public DirBytesContext dirBytes() {
+		DirBytesContext _localctx = new DirBytesContext(Context, State);
+		EnterRule(_localctx, 32, RULE_dirBytes);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1199,7 +1199,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Dir_bankbytContext : ParserRuleContext {
+	public partial class DirBankbyteContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BANKBYTES() { return GetToken(Fluent6502.BANKBYTES, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext[] expr() {
 			return GetRuleContexts<ExprContext>();
@@ -1211,23 +1211,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA(int i) {
 			return GetToken(Fluent6502.COMMA, i);
 		}
-		public Dir_bankbytContext(ParserRuleContext parent, int invokingState)
+		public DirBankbyteContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_dir_bankbyt; } }
+		public override int RuleIndex { get { return RULE_dirBankbyte; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDir_bankbyt(this);
+			if (typedVisitor != null) return typedVisitor.VisitDirBankbyte(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Dir_bankbytContext dir_bankbyt() {
-		Dir_bankbytContext _localctx = new Dir_bankbytContext(Context, State);
-		EnterRule(_localctx, 34, RULE_dir_bankbyt);
+	public DirBankbyteContext dirBankbyte() {
+		DirBankbyteContext _localctx = new DirBankbyteContext(Context, State);
+		EnterRule(_localctx, 34, RULE_dirBankbyte);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1265,7 +1265,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_unaryContext : ParserRuleContext {
+	public partial class OpUnaryContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode PLUS() { return GetToken(Fluent6502.PLUS, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode MINUS() { return GetToken(Fluent6502.MINUS, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LT() { return GetToken(Fluent6502.LT, 0); }
@@ -1273,23 +1273,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CARET() { return GetToken(Fluent6502.CARET, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode TILDE() { return GetToken(Fluent6502.TILDE, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode EXCLM() { return GetToken(Fluent6502.EXCLM, 0); }
-		public Op_unaryContext(ParserRuleContext parent, int invokingState)
+		public OpUnaryContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_unary; } }
+		public override int RuleIndex { get { return RULE_opUnary; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_unary(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpUnary(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_unaryContext op_unary() {
-		Op_unaryContext _localctx = new Op_unaryContext(Context, State);
-		EnterRule(_localctx, 36, RULE_op_unary);
+	public OpUnaryContext opUnary() {
+		OpUnaryContext _localctx = new OpUnaryContext(Context, State);
+		EnterRule(_localctx, 36, RULE_opUnary);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1316,7 +1316,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_binaryContext : ParserRuleContext {
+	public partial class OpBinaryContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode PLUS() { return GetToken(Fluent6502.PLUS, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode MINUS() { return GetToken(Fluent6502.MINUS, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STAR() { return GetToken(Fluent6502.STAR, 0); }
@@ -1325,23 +1325,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode PIPE() { return GetToken(Fluent6502.PIPE, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LSHFT() { return GetToken(Fluent6502.LSHFT, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RSHFT() { return GetToken(Fluent6502.RSHFT, 0); }
-		public Op_binaryContext(ParserRuleContext parent, int invokingState)
+		public OpBinaryContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_binary; } }
+		public override int RuleIndex { get { return RULE_opBinary; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_binary(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpBinary(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_binaryContext op_binary() {
-		Op_binaryContext _localctx = new Op_binaryContext(Context, State);
-		EnterRule(_localctx, 38, RULE_op_binary);
+	public OpBinaryContext opBinary() {
+		OpBinaryContext _localctx = new OpBinaryContext(Context, State);
+		EnterRule(_localctx, 38, RULE_opBinary);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1368,7 +1368,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_gotoContext : ParserRuleContext {
+	public partial class OpGotoContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode[] PLUS() { return GetTokens(Fluent6502.PLUS); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode PLUS(int i) {
 			return GetToken(Fluent6502.PLUS, i);
@@ -1377,23 +1377,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode MINUS(int i) {
 			return GetToken(Fluent6502.MINUS, i);
 		}
-		public Op_gotoContext(ParserRuleContext parent, int invokingState)
+		public OpGotoContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_goto; } }
+		public override int RuleIndex { get { return RULE_opGoto; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_goto(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpGoto(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_gotoContext op_goto() {
-		Op_gotoContext _localctx = new Op_gotoContext(Context, State);
-		EnterRule(_localctx, 40, RULE_op_goto);
+	public OpGotoContext opGoto() {
+		OpGotoContext _localctx = new OpGotoContext(Context, State);
+		EnterRule(_localctx, 40, RULE_opGoto);
 		try {
 			int _alt;
 			State = 214;
@@ -1465,35 +1465,35 @@ public partial class Fluent6502 : Parser {
 	}
 
 	public partial class OperationContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Op_impContext op_imp() {
-			return GetRuleContext<Op_impContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpImpContext opImp() {
+			return GetRuleContext<OpImpContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_accContext op_acc() {
-			return GetRuleContext<Op_accContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpAccContext opAcc() {
+			return GetRuleContext<OpAccContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_immContext op_imm() {
-			return GetRuleContext<Op_immContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpImmContext opImm() {
+			return GetRuleContext<OpImmContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_relContext op_rel() {
-			return GetRuleContext<Op_relContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpRelContext opRel() {
+			return GetRuleContext<OpRelContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_zabContext op_zab() {
-			return GetRuleContext<Op_zabContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpZabContext opZab() {
+			return GetRuleContext<OpZabContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_zaxContext op_zax() {
-			return GetRuleContext<Op_zaxContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpZaxContext opZax() {
+			return GetRuleContext<OpZaxContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_zayContext op_zay() {
-			return GetRuleContext<Op_zayContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpZayContext opZay() {
+			return GetRuleContext<OpZayContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_indContext op_ind() {
-			return GetRuleContext<Op_indContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpIndContext opInd() {
+			return GetRuleContext<OpIndContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_inxContext op_inx() {
-			return GetRuleContext<Op_inxContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpInxContext opInx() {
+			return GetRuleContext<OpInxContext>(0);
 		}
-		[System.Diagnostics.DebuggerNonUserCode] public Op_inyContext op_iny() {
-			return GetRuleContext<Op_inyContext>(0);
+		[System.Diagnostics.DebuggerNonUserCode] public OpInyContext opIny() {
+			return GetRuleContext<OpInyContext>(0);
 		}
 		public OperationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -1520,70 +1520,70 @@ public partial class Fluent6502 : Parser {
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 216;
-				op_imp();
+				opImp();
 				}
 				break;
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 217;
-				op_acc();
+				opAcc();
 				}
 				break;
 			case 3:
 				EnterOuterAlt(_localctx, 3);
 				{
 				State = 218;
-				op_imm();
+				opImm();
 				}
 				break;
 			case 4:
 				EnterOuterAlt(_localctx, 4);
 				{
 				State = 219;
-				op_rel();
+				opRel();
 				}
 				break;
 			case 5:
 				EnterOuterAlt(_localctx, 5);
 				{
 				State = 220;
-				op_zab();
+				opZab();
 				}
 				break;
 			case 6:
 				EnterOuterAlt(_localctx, 6);
 				{
 				State = 221;
-				op_zax();
+				opZax();
 				}
 				break;
 			case 7:
 				EnterOuterAlt(_localctx, 7);
 				{
 				State = 222;
-				op_zay();
+				opZay();
 				}
 				break;
 			case 8:
 				EnterOuterAlt(_localctx, 8);
 				{
 				State = 223;
-				op_ind();
+				opInd();
 				}
 				break;
 			case 9:
 				EnterOuterAlt(_localctx, 9);
 				{
 				State = 224;
-				op_inx();
+				opInx();
 				}
 				break;
 			case 10:
 				EnterOuterAlt(_localctx, 10);
 				{
 				State = 225;
-				op_iny();
+				opIny();
 				}
 				break;
 			}
@@ -1599,32 +1599,32 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_impContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_impliedContext opcode_implied() {
-			return GetRuleContext<Opcode_impliedContext>(0);
+	public partial class OpImpContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeImpliedContext opcodeImplied() {
+			return GetRuleContext<OpcodeImpliedContext>(0);
 		}
-		public Op_impContext(ParserRuleContext parent, int invokingState)
+		public OpImpContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_imp; } }
+		public override int RuleIndex { get { return RULE_opImp; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_imp(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpImp(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_impContext op_imp() {
-		Op_impContext _localctx = new Op_impContext(Context, State);
-		EnterRule(_localctx, 44, RULE_op_imp);
+	public OpImpContext opImp() {
+		OpImpContext _localctx = new OpImpContext(Context, State);
+		EnterRule(_localctx, 44, RULE_opImp);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 228;
-			opcode_implied();
+			opcodeImplied();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1638,34 +1638,34 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_accContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_accumlatorContext opcode_accumlator() {
-			return GetRuleContext<Opcode_accumlatorContext>(0);
+	public partial class OpAccContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeAccumlatorContext opcodeAccumlator() {
+			return GetRuleContext<OpcodeAccumlatorContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode A() { return GetToken(Fluent6502.A, 0); }
-		public Op_accContext(ParserRuleContext parent, int invokingState)
+		public OpAccContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_acc; } }
+		public override int RuleIndex { get { return RULE_opAcc; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_acc(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpAcc(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_accContext op_acc() {
-		Op_accContext _localctx = new Op_accContext(Context, State);
-		EnterRule(_localctx, 46, RULE_op_acc);
+	public OpAccContext opAcc() {
+		OpAccContext _localctx = new OpAccContext(Context, State);
+		EnterRule(_localctx, 46, RULE_opAcc);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 230;
-			opcode_accumlator();
+			opcodeAccumlator();
 			State = 232;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
@@ -1689,36 +1689,36 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_immContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_immediateContext opcode_immediate() {
-			return GetRuleContext<Opcode_immediateContext>(0);
+	public partial class OpImmContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeImmediateContext opcodeImmediate() {
+			return GetRuleContext<OpcodeImmediateContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode POUND() { return GetToken(Fluent6502.POUND, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
-		public Op_immContext(ParserRuleContext parent, int invokingState)
+		public OpImmContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_imm; } }
+		public override int RuleIndex { get { return RULE_opImm; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_imm(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpImm(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_immContext op_imm() {
-		Op_immContext _localctx = new Op_immContext(Context, State);
-		EnterRule(_localctx, 48, RULE_op_imm);
+	public OpImmContext opImm() {
+		OpImmContext _localctx = new OpImmContext(Context, State);
+		EnterRule(_localctx, 48, RULE_opImm);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 234;
-			opcode_immediate();
+			opcodeImmediate();
 			State = 235;
 			Match(POUND);
 			State = 236;
@@ -1736,35 +1736,35 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_relContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_relativeContext opcode_relative() {
-			return GetRuleContext<Opcode_relativeContext>(0);
+	public partial class OpRelContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeRelativeContext opcodeRelative() {
+			return GetRuleContext<OpcodeRelativeContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
-		public Op_relContext(ParserRuleContext parent, int invokingState)
+		public OpRelContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_rel; } }
+		public override int RuleIndex { get { return RULE_opRel; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_rel(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpRel(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_relContext op_rel() {
-		Op_relContext _localctx = new Op_relContext(Context, State);
-		EnterRule(_localctx, 50, RULE_op_rel);
+	public OpRelContext opRel() {
+		OpRelContext _localctx = new OpRelContext(Context, State);
+		EnterRule(_localctx, 50, RULE_opRel);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 238;
-			opcode_relative();
+			opcodeRelative();
 			State = 239;
 			expr(0);
 			}
@@ -1780,35 +1780,35 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_zabContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_zp_absContext opcode_zp_abs() {
-			return GetRuleContext<Opcode_zp_absContext>(0);
+	public partial class OpZabContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeZpAbsContext opcodeZpAbs() {
+			return GetRuleContext<OpcodeZpAbsContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
-		public Op_zabContext(ParserRuleContext parent, int invokingState)
+		public OpZabContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_zab; } }
+		public override int RuleIndex { get { return RULE_opZab; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_zab(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpZab(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_zabContext op_zab() {
-		Op_zabContext _localctx = new Op_zabContext(Context, State);
-		EnterRule(_localctx, 52, RULE_op_zab);
+	public OpZabContext opZab() {
+		OpZabContext _localctx = new OpZabContext(Context, State);
+		EnterRule(_localctx, 52, RULE_opZab);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 241;
-			opcode_zp_abs();
+			opcodeZpAbs();
 			State = 242;
 			expr(0);
 			}
@@ -1824,37 +1824,37 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_zaxContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_zp_abs_xContext opcode_zp_abs_x() {
-			return GetRuleContext<Opcode_zp_abs_xContext>(0);
+	public partial class OpZaxContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeZpAbsXContext opcodeZpAbsX() {
+			return GetRuleContext<OpcodeZpAbsXContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA() { return GetToken(Fluent6502.COMMA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode X() { return GetToken(Fluent6502.X, 0); }
-		public Op_zaxContext(ParserRuleContext parent, int invokingState)
+		public OpZaxContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_zax; } }
+		public override int RuleIndex { get { return RULE_opZax; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_zax(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpZax(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_zaxContext op_zax() {
-		Op_zaxContext _localctx = new Op_zaxContext(Context, State);
-		EnterRule(_localctx, 54, RULE_op_zax);
+	public OpZaxContext opZax() {
+		OpZaxContext _localctx = new OpZaxContext(Context, State);
+		EnterRule(_localctx, 54, RULE_opZax);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 244;
-			opcode_zp_abs_x();
+			opcodeZpAbsX();
 			State = 245;
 			expr(0);
 			State = 246;
@@ -1874,37 +1874,37 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_zayContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_zp_abs_yContext opcode_zp_abs_y() {
-			return GetRuleContext<Opcode_zp_abs_yContext>(0);
+	public partial class OpZayContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeZpAbsYContext opcodeZpAbsY() {
+			return GetRuleContext<OpcodeZpAbsYContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA() { return GetToken(Fluent6502.COMMA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Y() { return GetToken(Fluent6502.Y, 0); }
-		public Op_zayContext(ParserRuleContext parent, int invokingState)
+		public OpZayContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_zay; } }
+		public override int RuleIndex { get { return RULE_opZay; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_zay(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpZay(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_zayContext op_zay() {
-		Op_zayContext _localctx = new Op_zayContext(Context, State);
-		EnterRule(_localctx, 56, RULE_op_zay);
+	public OpZayContext opZay() {
+		OpZayContext _localctx = new OpZayContext(Context, State);
+		EnterRule(_localctx, 56, RULE_opZay);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 249;
-			opcode_zp_abs_y();
+			opcodeZpAbsY();
 			State = 250;
 			expr(0);
 			State = 251;
@@ -1924,37 +1924,37 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_indContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_indirectContext opcode_indirect() {
-			return GetRuleContext<Opcode_indirectContext>(0);
+	public partial class OpIndContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeIndirectContext opcodeIndirect() {
+			return GetRuleContext<OpcodeIndirectContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LPAREN() { return GetToken(Fluent6502.LPAREN, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RPAREN() { return GetToken(Fluent6502.RPAREN, 0); }
-		public Op_indContext(ParserRuleContext parent, int invokingState)
+		public OpIndContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_ind; } }
+		public override int RuleIndex { get { return RULE_opInd; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_ind(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpInd(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_indContext op_ind() {
-		Op_indContext _localctx = new Op_indContext(Context, State);
-		EnterRule(_localctx, 58, RULE_op_ind);
+	public OpIndContext opInd() {
+		OpIndContext _localctx = new OpIndContext(Context, State);
+		EnterRule(_localctx, 58, RULE_opInd);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 254;
-			opcode_indirect();
+			opcodeIndirect();
 			State = 255;
 			Match(LPAREN);
 			State = 256;
@@ -1974,9 +1974,9 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_inxContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_indirect_xContext opcode_indirect_x() {
-			return GetRuleContext<Opcode_indirect_xContext>(0);
+	public partial class OpInxContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeIndirectXContext opcodeIndirectX() {
+			return GetRuleContext<OpcodeIndirectXContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LPAREN() { return GetToken(Fluent6502.LPAREN, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
@@ -1985,28 +1985,28 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA() { return GetToken(Fluent6502.COMMA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode X() { return GetToken(Fluent6502.X, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RPAREN() { return GetToken(Fluent6502.RPAREN, 0); }
-		public Op_inxContext(ParserRuleContext parent, int invokingState)
+		public OpInxContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_inx; } }
+		public override int RuleIndex { get { return RULE_opInx; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_inx(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpInx(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_inxContext op_inx() {
-		Op_inxContext _localctx = new Op_inxContext(Context, State);
-		EnterRule(_localctx, 60, RULE_op_inx);
+	public OpInxContext opInx() {
+		OpInxContext _localctx = new OpInxContext(Context, State);
+		EnterRule(_localctx, 60, RULE_opInx);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 259;
-			opcode_indirect_x();
+			opcodeIndirectX();
 			State = 260;
 			Match(LPAREN);
 			State = 261;
@@ -2030,9 +2030,9 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Op_inyContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Opcode_indirect_yContext opcode_indirect_y() {
-			return GetRuleContext<Opcode_indirect_yContext>(0);
+	public partial class OpInyContext : ParserRuleContext {
+		[System.Diagnostics.DebuggerNonUserCode] public OpcodeIndirectYContext opcodeIndirectY() {
+			return GetRuleContext<OpcodeIndirectYContext>(0);
 		}
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LPAREN() { return GetToken(Fluent6502.LPAREN, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ExprContext expr() {
@@ -2041,28 +2041,28 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode RPAREN() { return GetToken(Fluent6502.RPAREN, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode COMMA() { return GetToken(Fluent6502.COMMA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode Y() { return GetToken(Fluent6502.Y, 0); }
-		public Op_inyContext(ParserRuleContext parent, int invokingState)
+		public OpInyContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_op_iny; } }
+		public override int RuleIndex { get { return RULE_opIny; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOp_iny(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpIny(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Op_inyContext op_iny() {
-		Op_inyContext _localctx = new Op_inyContext(Context, State);
-		EnterRule(_localctx, 62, RULE_op_iny);
+	public OpInyContext opIny() {
+		OpInyContext _localctx = new OpInyContext(Context, State);
+		EnterRule(_localctx, 62, RULE_opIny);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 266;
-			opcode_indirect_y();
+			opcodeIndirectY();
 			State = 267;
 			Match(LPAREN);
 			State = 268;
@@ -2086,7 +2086,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_impliedContext : ParserRuleContext {
+	public partial class OpcodeImpliedContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BRK() { return GetToken(Fluent6502.BRK, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLC() { return GetToken(Fluent6502.CLC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CLD() { return GetToken(Fluent6502.CLD, 0); }
@@ -2112,23 +2112,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode TXA() { return GetToken(Fluent6502.TXA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode TXS() { return GetToken(Fluent6502.TXS, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode TYA() { return GetToken(Fluent6502.TYA, 0); }
-		public Opcode_impliedContext(ParserRuleContext parent, int invokingState)
+		public OpcodeImpliedContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_implied; } }
+		public override int RuleIndex { get { return RULE_opcodeImplied; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_implied(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeImplied(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_impliedContext opcode_implied() {
-		Opcode_impliedContext _localctx = new Opcode_impliedContext(Context, State);
-		EnterRule(_localctx, 64, RULE_opcode_implied);
+	public OpcodeImpliedContext opcodeImplied() {
+		OpcodeImpliedContext _localctx = new OpcodeImpliedContext(Context, State);
+		EnterRule(_localctx, 64, RULE_opcodeImplied);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2155,28 +2155,28 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_accumlatorContext : ParserRuleContext {
+	public partial class OpcodeAccumlatorContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ASL() { return GetToken(Fluent6502.ASL, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LSR() { return GetToken(Fluent6502.LSR, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ROL() { return GetToken(Fluent6502.ROL, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ROR() { return GetToken(Fluent6502.ROR, 0); }
-		public Opcode_accumlatorContext(ParserRuleContext parent, int invokingState)
+		public OpcodeAccumlatorContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_accumlator; } }
+		public override int RuleIndex { get { return RULE_opcodeAccumlator; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_accumlator(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeAccumlator(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_accumlatorContext opcode_accumlator() {
-		Opcode_accumlatorContext _localctx = new Opcode_accumlatorContext(Context, State);
-		EnterRule(_localctx, 66, RULE_opcode_accumlator);
+	public OpcodeAccumlatorContext opcodeAccumlator() {
+		OpcodeAccumlatorContext _localctx = new OpcodeAccumlatorContext(Context, State);
+		EnterRule(_localctx, 66, RULE_opcodeAccumlator);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2203,7 +2203,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_immediateContext : ParserRuleContext {
+	public partial class OpcodeImmediateContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ADC() { return GetToken(Fluent6502.ADC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AND() { return GetToken(Fluent6502.AND, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CMP() { return GetToken(Fluent6502.CMP, 0); }
@@ -2215,23 +2215,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode LDY() { return GetToken(Fluent6502.LDY, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ORA() { return GetToken(Fluent6502.ORA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SBC() { return GetToken(Fluent6502.SBC, 0); }
-		public Opcode_immediateContext(ParserRuleContext parent, int invokingState)
+		public OpcodeImmediateContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_immediate; } }
+		public override int RuleIndex { get { return RULE_opcodeImmediate; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_immediate(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeImmediate(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_immediateContext opcode_immediate() {
-		Opcode_immediateContext _localctx = new Opcode_immediateContext(Context, State);
-		EnterRule(_localctx, 68, RULE_opcode_immediate);
+	public OpcodeImmediateContext opcodeImmediate() {
+		OpcodeImmediateContext _localctx = new OpcodeImmediateContext(Context, State);
+		EnterRule(_localctx, 68, RULE_opcodeImmediate);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2258,7 +2258,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_relativeContext : ParserRuleContext {
+	public partial class OpcodeRelativeContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BCC() { return GetToken(Fluent6502.BCC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BCS() { return GetToken(Fluent6502.BCS, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BEQ() { return GetToken(Fluent6502.BEQ, 0); }
@@ -2267,23 +2267,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BPL() { return GetToken(Fluent6502.BPL, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BVC() { return GetToken(Fluent6502.BVC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode BVS() { return GetToken(Fluent6502.BVS, 0); }
-		public Opcode_relativeContext(ParserRuleContext parent, int invokingState)
+		public OpcodeRelativeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_relative; } }
+		public override int RuleIndex { get { return RULE_opcodeRelative; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_relative(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeRelative(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_relativeContext opcode_relative() {
-		Opcode_relativeContext _localctx = new Opcode_relativeContext(Context, State);
-		EnterRule(_localctx, 70, RULE_opcode_relative);
+	public OpcodeRelativeContext opcodeRelative() {
+		OpcodeRelativeContext _localctx = new OpcodeRelativeContext(Context, State);
+		EnterRule(_localctx, 70, RULE_opcodeRelative);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2310,7 +2310,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_zp_absContext : ParserRuleContext {
+	public partial class OpcodeZpAbsContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ADC() { return GetToken(Fluent6502.ADC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AND() { return GetToken(Fluent6502.AND, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ASL() { return GetToken(Fluent6502.ASL, 0); }
@@ -2334,23 +2334,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STA() { return GetToken(Fluent6502.STA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STX() { return GetToken(Fluent6502.STX, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STY() { return GetToken(Fluent6502.STY, 0); }
-		public Opcode_zp_absContext(ParserRuleContext parent, int invokingState)
+		public OpcodeZpAbsContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_zp_abs; } }
+		public override int RuleIndex { get { return RULE_opcodeZpAbs; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_zp_abs(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeZpAbs(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_zp_absContext opcode_zp_abs() {
-		Opcode_zp_absContext _localctx = new Opcode_zp_absContext(Context, State);
-		EnterRule(_localctx, 72, RULE_opcode_zp_abs);
+	public OpcodeZpAbsContext opcodeZpAbs() {
+		OpcodeZpAbsContext _localctx = new OpcodeZpAbsContext(Context, State);
+		EnterRule(_localctx, 72, RULE_opcodeZpAbs);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2377,7 +2377,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_zp_abs_xContext : ParserRuleContext {
+	public partial class OpcodeZpAbsXContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ADC() { return GetToken(Fluent6502.ADC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AND() { return GetToken(Fluent6502.AND, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ASL() { return GetToken(Fluent6502.ASL, 0); }
@@ -2394,23 +2394,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SBC() { return GetToken(Fluent6502.SBC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STA() { return GetToken(Fluent6502.STA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STY() { return GetToken(Fluent6502.STY, 0); }
-		public Opcode_zp_abs_xContext(ParserRuleContext parent, int invokingState)
+		public OpcodeZpAbsXContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_zp_abs_x; } }
+		public override int RuleIndex { get { return RULE_opcodeZpAbsX; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_zp_abs_x(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeZpAbsX(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_zp_abs_xContext opcode_zp_abs_x() {
-		Opcode_zp_abs_xContext _localctx = new Opcode_zp_abs_xContext(Context, State);
-		EnterRule(_localctx, 74, RULE_opcode_zp_abs_x);
+	public OpcodeZpAbsXContext opcodeZpAbsX() {
+		OpcodeZpAbsXContext _localctx = new OpcodeZpAbsXContext(Context, State);
+		EnterRule(_localctx, 74, RULE_opcodeZpAbsX);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2437,7 +2437,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_zp_abs_yContext : ParserRuleContext {
+	public partial class OpcodeZpAbsYContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ADC() { return GetToken(Fluent6502.ADC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AND() { return GetToken(Fluent6502.AND, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CMP() { return GetToken(Fluent6502.CMP, 0); }
@@ -2448,23 +2448,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SBC() { return GetToken(Fluent6502.SBC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STA() { return GetToken(Fluent6502.STA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STX() { return GetToken(Fluent6502.STX, 0); }
-		public Opcode_zp_abs_yContext(ParserRuleContext parent, int invokingState)
+		public OpcodeZpAbsYContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_zp_abs_y; } }
+		public override int RuleIndex { get { return RULE_opcodeZpAbsY; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_zp_abs_y(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeZpAbsY(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_zp_abs_yContext opcode_zp_abs_y() {
-		Opcode_zp_abs_yContext _localctx = new Opcode_zp_abs_yContext(Context, State);
-		EnterRule(_localctx, 76, RULE_opcode_zp_abs_y);
+	public OpcodeZpAbsYContext opcodeZpAbsY() {
+		OpcodeZpAbsYContext _localctx = new OpcodeZpAbsYContext(Context, State);
+		EnterRule(_localctx, 76, RULE_opcodeZpAbsY);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2491,25 +2491,25 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_indirectContext : ParserRuleContext {
+	public partial class OpcodeIndirectContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode JMP() { return GetToken(Fluent6502.JMP, 0); }
-		public Opcode_indirectContext(ParserRuleContext parent, int invokingState)
+		public OpcodeIndirectContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_indirect; } }
+		public override int RuleIndex { get { return RULE_opcodeIndirect; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_indirect(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeIndirect(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_indirectContext opcode_indirect() {
-		Opcode_indirectContext _localctx = new Opcode_indirectContext(Context, State);
-		EnterRule(_localctx, 78, RULE_opcode_indirect);
+	public OpcodeIndirectContext opcodeIndirect() {
+		OpcodeIndirectContext _localctx = new OpcodeIndirectContext(Context, State);
+		EnterRule(_localctx, 78, RULE_opcodeIndirect);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -2528,7 +2528,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_indirect_xContext : ParserRuleContext {
+	public partial class OpcodeIndirectXContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ADC() { return GetToken(Fluent6502.ADC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AND() { return GetToken(Fluent6502.AND, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CMP() { return GetToken(Fluent6502.CMP, 0); }
@@ -2537,23 +2537,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ORA() { return GetToken(Fluent6502.ORA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SBC() { return GetToken(Fluent6502.SBC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STA() { return GetToken(Fluent6502.STA, 0); }
-		public Opcode_indirect_xContext(ParserRuleContext parent, int invokingState)
+		public OpcodeIndirectXContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_indirect_x; } }
+		public override int RuleIndex { get { return RULE_opcodeIndirectX; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_indirect_x(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeIndirectX(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_indirect_xContext opcode_indirect_x() {
-		Opcode_indirect_xContext _localctx = new Opcode_indirect_xContext(Context, State);
-		EnterRule(_localctx, 80, RULE_opcode_indirect_x);
+	public OpcodeIndirectXContext opcodeIndirectX() {
+		OpcodeIndirectXContext _localctx = new OpcodeIndirectXContext(Context, State);
+		EnterRule(_localctx, 80, RULE_opcodeIndirectX);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2580,7 +2580,7 @@ public partial class Fluent6502 : Parser {
 		return _localctx;
 	}
 
-	public partial class Opcode_indirect_yContext : ParserRuleContext {
+	public partial class OpcodeIndirectYContext : ParserRuleContext {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ADC() { return GetToken(Fluent6502.ADC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode AND() { return GetToken(Fluent6502.AND, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode CMP() { return GetToken(Fluent6502.CMP, 0); }
@@ -2589,23 +2589,23 @@ public partial class Fluent6502 : Parser {
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode ORA() { return GetToken(Fluent6502.ORA, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode SBC() { return GetToken(Fluent6502.SBC, 0); }
 		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STA() { return GetToken(Fluent6502.STA, 0); }
-		public Opcode_indirect_yContext(ParserRuleContext parent, int invokingState)
+		public OpcodeIndirectYContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_opcode_indirect_y; } }
+		public override int RuleIndex { get { return RULE_opcodeIndirectY; } }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
 			IFluent6502Visitor<TResult> typedVisitor = visitor as IFluent6502Visitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitOpcode_indirect_y(this);
+			if (typedVisitor != null) return typedVisitor.VisitOpcodeIndirectY(this);
 			else return visitor.VisitChildren(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Opcode_indirect_yContext opcode_indirect_y() {
-		Opcode_indirect_yContext _localctx = new Opcode_indirect_yContext(Context, State);
-		EnterRule(_localctx, 82, RULE_opcode_indirect_y);
+	public OpcodeIndirectYContext opcodeIndirectY() {
+		OpcodeIndirectYContext _localctx = new OpcodeIndirectYContext(Context, State);
+		EnterRule(_localctx, 82, RULE_opcodeIndirectY);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
